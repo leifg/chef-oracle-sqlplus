@@ -2,7 +2,7 @@ oracle_sqlplus_filename = node[:oracle][:oracle_sqlplus_install_filename]
 
 execute 'copy oracle installation file' do
   command "cp #{node[:oracle][:oracle_sqlplus_install_source]}/#{oracle_sqlplus_filename} /tmp/"
-  creates "/tmp/#{oracle_client_filename}"
+  creates "/tmp/#{oracle_sqlplus_filename}"
 end
 
 %w{alien libaio1}.each do | pkg |
